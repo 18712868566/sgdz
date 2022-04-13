@@ -148,79 +148,17 @@ dialog = {
     },
     // 答题正确
     alertPop_lott_victory: function () {
-        let _html = `<div class="plan-cen"> 
-            <img class="imgcove" src="../images/pop/plan-victory.png" alt="">
-        </div>`;
-
-        dialog.showInfo(`<div class="pop pop-global-bg">
+        dialog.showInfo(`<div class="pop pop-global-logic">
             <div class="borbox pop-victory">
-                ${_html}
-                <a href="javascript:;" class="btn btn_nothing"></a>
+                <a href="javascript:;" class="btn btn_determine"></a>
             </div>
         </div>`);
     },
     // 答题错误
     alertPop_lott_error: function () {
-        let _html = `<div class="plan-cen gray"> 
-            <img class="imgcove" src="../images/pop/plan-error.png" alt="">
-        </div>`;
-
-        dialog.showInfo(`<div class="pop pop-global-bg ">
+        dialog.showInfo(`<div class="pop pop-global-logic ">
             <div class="borbox pop-error">
-                ${_html}
-                <a href="javascript:;" class="btn btn_nothing"></a>
-            </div>
-        </div>`);
-    },
-    // 获得奖励
-    alertPop_get_reward: function (img1, img2, txt1, txt2) {
-        let _html = `<div class="plan-cen"> 
-            <img class="imgcove title-reward" src="../images/pop/title-reward.png" alt="">
-            
-            <div class="reward-lott">
-                <dl class="lottpic-icon">
-                    <dt><img class="imgcove lott-pic" src="${img1}" alt=""></dt>
-                    <dd>${txt1}</dd>
-                </dl>
-                <dl class="lottpic-icon">
-                    <dt><img class="imgcove lott-pic" src="${img2}" alt=""></dt>
-                    <dd>${txt2}</dd>
-                </dl>
-            </div>
-        </div>`;
-
-        dialog.showInfo(`<div class="pop pop-global-bg pop-global-bg2">
-            <div class="borbox pop-get-reward">
-                ${_html}
-
-                <div class="reward-btns">
-                    <a href="javascript:;" class="btn btn_jiaohuan">交换</a>
-                    <a href="javascript:;" class="btn btn_bottom">下一个</a>
-                </div>
-            </div>
-        </div>`);
-    },
-    // 获得奖励2 - 只有一个奖励时
-    alertPop_get_reward_one: function (img, txt) {
-        let _html = `<div class="plan-cen"> 
-            <img class="imgcove title-reward" src="../images/pop/title-reward.png" alt="">
-            
-            <div class="reward-lott">
-                <dl class="lottpic-icon">
-                    <dt><img class="imgcove lott-pic" src="${img}" alt=""></dt>
-                    <dd>${txt}</dd>
-                </dl>
-            </div>
-        </div>`;
-
-        dialog.showInfo(`<div class="pop pop-global-bg pop-global-bg2">
-            <div class="borbox pop-get-reward">
-                ${_html}
-
-                <div class="reward-btns">
-                    <a href="javascript:;" class="btn btn_jiaohuan">交换</a>
-                    <a href="javascript:;" class="btn btn_bottom">下一个</a>
-                </div>
+                <a href="javascript:;" class="btn btn_fb_share"></a>
             </div>
         </div>`);
     },
@@ -289,42 +227,35 @@ dialog = {
     },
     // 我的背包
     alertPop_mylott: function (data) {
-        // let _html = `<div class="plan-cen"> 
-        //     <dl class='dl_lists'>
-        //         <dd> <b class="cms-lott-icon"></b> <span class="code" id='dum1'>XDF3FXCV</span> </dd>
-        //         <i class='copyele'>COPY</i>
-        //     </dl>
-        // </div>`;
-
-        let _htmlInner = '';
-        for (let i = 0; i < data.length; i++) {
-            const element = data[i];
-
-            _htmlInner += ` 
+        let _html = `<div class="plan-cen"> 
             <dl class='dl_lists'>
-                <dd> <b class="cms-lott-icon">${data[i].current_serial}</b> <span class="code" id='dum${i + 1}'>${data[i].gift_code}</span> </dd>
+                <dd> <b class="cms-lott-icon"></b> <span class="code" id='dum1'>XDF3FXCV</span> </dd>
                 <i class='copyele'>COPY</i>
             </dl>
-        `;
-        }
+        </div>`;
 
-        let _html = `<div class="plan-cen">${_htmlInner}</div>`;
+        // let _htmlInner = '';
+        // for (let i = 0; i < data.length; i++) {
+        //     const element = data[i];
+
+        //     _htmlInner += ` 
+        //     <dl class='dl_lists'>
+        //         <dd> <b class="cms-lott-icon">${data[i].current_serial}</b> <span class="code" id='dum${i + 1}'>${data[i].gift_code}</span> </dd>
+        //         <i class='copyele'>COPY</i>
+        //     </dl>
+        // `;
+        // }
+
+        // let _html = `<div class="plan-cen">${_htmlInner}</div>`;
 
 
-        dialog.showInfo(`<div class="pop pop-global-bg pop-global-bg-mylott">
+        dialog.showInfo(`<div class="pop pop-global-logic">
             <div class="borbox pop-plan-mylott">
                 ${_html}
-                <dl class="tipmsg">
-                    <dt>[교환방법]</dt>
-                    <dd>① 복사 버튼을 터치해 상기 교환코드를 복사한 후, 게임을 실행하세요.</dd>
-                    <dd>② 게임 메인화면 좌측 지휘관 ID를 터치하세요.</dd>
-                    <dd>③ 지휘관 화면 우측 하단에 위치한 교환코드 란에 입력하세요.</dd>
-                </dl>
-                <a href="javascript:;" class="btn btn_plan"></a>
             </div>
         </div>`);
 
-        $(".pop-plan-mylott .plan-cen").mCustomScrollbar();
+        // $(".pop-plan-mylott .plan-cen").mCustomScrollbar();
     },
     // 武田信玄
     alertHeroXinXuan: function () {
@@ -401,4 +332,11 @@ function timestampToTime(timestamp) {
 };
 
 
-dialog.alertPop_gz();
+// 回答正确
+// dialog.alertPop_lott_victory();
+
+// 回答错误
+// dialog.alertPop_lott_error();
+
+// 背包
+// dialog.alertPop_mylott();

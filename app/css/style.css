@@ -512,7 +512,21 @@ body {
     background-position: -9.45rem -1.1rem;
 }
 
+.swp-nav .btn::after {
+    width: .2rem;
+    height: .38rem;
+    content: '';
+    display: block;
+    background: url(../images/nav-icon.png) no-repeat 0 0 / 100% 100%;
+    position: absolute;
+    right: -0.64rem;
+    top: 50%;
+    margin-top: -0.35rem;
+}
 
+.swp-nav .btn:nth-child(5):after {
+    display: none
+}
 
 .swp-nav .after {
     display: block;
@@ -1433,4 +1447,80 @@ body {
 .mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
 .mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
     background-color: #000;
+}
+
+
+/* 回答正确 */
+.pop-victory {
+    width: 7.22rem;
+    height: 3.88rem;
+    background: url(../images/pop/pop-victory.png) no-repeat 0 center / 100% 3.88rem;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn_determine {
+    width: 1.72rem;
+    height: .62rem;
+    background: url(../images/pop/btn_determine.png) no-repeat 0 0 / 100% 100%;
+    margin: 2.2rem auto 0;
+}
+
+/* 回答错误 */
+.pop-error {
+    width: 7.22rem;
+    height: 3.88rem;
+    background: url(../images/pop/pop-error.png) no-repeat 0 0 / 100% 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn_fb_share {
+    width: 2.32rem;
+    height: .62rem;
+    background: url(../images/pop/fb-share.png) no-repeat 0 0 / 100% 100%;
+    margin: 2.2rem auto 0;
+}
+
+/* 背包 */
+.pop-plan-mylott {
+    width: 7.22rem;
+    height: 8.58rem;
+    background: url(../images/pop/pop-bg.png) no-repeat 0 0 / 100% 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.pop-plan-mylott .plan-cen {
+    padding: .6rem .4rem .6rem .4rem;
+    height: 8.6rem;
+}
+
+.pop-plan-mylott .plan-cen .dl_lists {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 94%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.pop-plan-mylott .plan-cen .dl_lists .code {
+    display: block;
+    width: 4rem;
+    height: .6rem;
+    line-height: .6rem;
+    background: red;
+    text-indent: .3rem;
+}
+
+.pop-plan-mylott .plan-cen .dl_lists .copyele {
+    width: 1.22rem;
+    height: .62rem;
+    background: url(../images/pop/btn_copy.png) no-repeat 0 0 / 100% 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-indent: -999em;
 }

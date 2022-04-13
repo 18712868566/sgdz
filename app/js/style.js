@@ -52,6 +52,12 @@ $(function () {
         dialog.alertHeroChangZheng();
     });
 
+
+    // 活动规则
+    $('.lantern-hdgz').on('click', function () {
+        dialog.alertPop_gz();
+    });
+
     // 整体框架
     var page = new Swiper('.mySwiper', {
         direction: "vertical",
@@ -81,7 +87,7 @@ function argumentsTabs(tabList, page) {
         // 跟随横条
         console.log(index);
         $(this).siblings('.swp-nav .after').stop().animate({ 'left': (index * 2.28) + 1.4 + 'rem' }, "88");
-    }).eq(3).click();
+    }).eq(0).click();
 };
 
 
