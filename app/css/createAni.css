@@ -1,3 +1,57 @@
+@-webkit-keyframes catchWind {
+    0% {
+        opacity: 1;
+        transform: rotate(-3deg);
+        transform-origin: center 0;
+    }
+
+    to {
+        opacity: 1;
+        transform: rotate(3deg);
+        transform-origin: center 0;
+    }
+}
+
+@keyframes catchWind {
+    0% {
+        opacity: 1;
+        transform: rotate(-3deg);
+        transform-origin: center 0;
+    }
+
+    to {
+        opacity: 1;
+        transform: rotate(3deg);
+        transform-origin: center 0;
+    }
+}
+
+
+@-webkit-keyframes catchDissipate {
+    0% {
+        opacity: 1;
+        transform: scale(1)
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(1.2)
+    }
+}
+
+@keyframes catchDissipate {
+    0% {
+        opacity: 1;
+        transform: scale(1)
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(1.2)
+    }
+}
+
+
 @-webkit-keyframes catchScaleIn {
     0% {
         opacity: 0;

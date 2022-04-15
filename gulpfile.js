@@ -271,8 +271,8 @@ gulp.task(
  */
 
 
-const prayProxy = createProxyMiddleware('/firn-night', {
-    target: 'http://grayraven-kr.demo.herogame.com', // 目标服务器 host
+const prayProxy = createProxyMiddleware('/pre', {
+    target: 'http://sengoku-taisen-m-tw.demo.herogame.com', // 目标服务器 host
     changeOrigin: true, // 默认false，是否需要改变原始主机头为目标URL
     logLevel: 'debug',
 });

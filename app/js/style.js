@@ -1,11 +1,23 @@
 $(function () {
-    $(document).on("click", "#alertInfo .close,.pop-hero .pop_hero_close", dialog.closeDiv);
+    $(document).on("click", "#alertInfo .close,.pop-hero .pop_hero_close,.pop_hero_close,.btn_determine", dialog.closeDiv);
 
     // 全局滚动效果
     AOS.init({
         once: true,
         duration: 800,
         anchorPlacement: "top-center"
+    });
+
+    // 灯笼收缩
+    $('.lantern-btn').on('click', function (param) {
+        $(this).toggleClass('btn-move-off');
+        $('.lantern-center').toggleClass('curr');
+    });
+
+    // 首页pv
+    $('.btn-video-play').on('click', function () {
+        let vUrl = $(this).attr('data-url');
+        dialog.alertVideo(vUrl)
     });
 
     // 英雄部分 滑过发光
@@ -36,11 +48,7 @@ $(function () {
         $(this).addClass('curr').siblings().removeClass('curr');
     });
 
-    // hero cv
-    $(document).on('click', '.pop-hero .btn-cv-play', function () {
-        $(this).toggleClass('cv-open');
-        // cv 控制
-    });
+
 
     $('.hero-flex .hero-name:nth-child(1)').on('click', function () {
         dialog.alertHeroXinXuan();
@@ -51,6 +59,38 @@ $(function () {
     $('.hero-flex .hero-name:nth-child(3)').on('click', function () {
         dialog.alertHeroChangZheng();
     });
+
+
+    // 点击播放音频
+    var indexAudio = $('#mp3Btn')[0];
+
+    // hero cv
+    $(document).on('click', '.pop-hero .btn-cv-play', function () {
+        $(this).toggleClass('cv-open');
+        // cv 控制
+        indexAudio = $('#mp3Btn')[0];
+        indexAudio.src = '';
+
+        var musrc_url = $(this).attr('data-url');
+
+        if ($(this).hasClass('cv-open')) {
+            indexAudio.src = musrc_url;
+            indexAudio.pause();
+            indexAudio.play();
+        } else {
+            indexAudio = $('#mp3Btn')[0];
+            indexAudio.pause();
+            indexAudio.src = '';
+        }
+
+        // 监听音频结束后 重置播放按钮
+        indexAudio.onended = function (param) {
+            let oEle = $('.pop-hero .btn-cv-play');
+            $('.pop-hero .btn-cv-play').removeClass('cv-open');
+        };
+    });
+
+
 
 
     // 活动规则
@@ -75,6 +115,8 @@ $(function () {
     });
 
     argumentsTabs('.swp-nav .btn', page);
+
+
 });
 
 function argumentsTabs(tabList, page) {

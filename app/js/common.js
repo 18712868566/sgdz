@@ -87,12 +87,15 @@ dialog = {
 
         dialog.showInfo(
             "<div class='pop_warp  popytbVideo'>" +
-            "<div class='before '>"
+            "<span class='pop_hero_close'></span>"
+            + "<div class='before '>"
             // +"<embed src='"+videoUrl+"' type='application/x-shockwave-flash' allowscriptaccess='always' allowfullscreen='true' wmode='opaque'>"
-            // + "<iframe border='0' marginwidth='0' framespacing='0' marginheight='0' src='https://www.youtube.com/embed/" + sendUrl + "' frameborder='0' noresize='scrolling='no' width='100%' height='100%' vspale='0' id='iframe' name='iframe' allowfullscreen></iframe>" +
-            + '<video src="' + sendUrl + '" muted loop autoplay="autoplay" playsinline="" webkit-playsinline="" x5-playsinline="" controls="controls"></video>' +
+            + "<iframe border='0' marginwidth='0' framespacing='0' marginheight='0' src='" + sendUrl + "' frameborder='0' noresize='scrolling='no' width='100%' height='100%' vspale='0' id='iframe' name='iframe' allowfullscreen></iframe>" +
+            // + '<video src="' + sendUrl + '" muted loop autoplay="autoplay" playsinline="" webkit-playsinline="" x5-playsinline="" controls="controls"></video>' +
             "</div>" +
             "</div>")
+
+        $('.popytbVideo').siblings('.close').hide();
     },
     //图片弹窗
     alertImages: function (imgUrl) {
@@ -118,12 +121,11 @@ dialog = {
     // 登陆
     alertPopLogin: function () {
         var LoginHtml = `
-            <a href="https://grayraven.kr/firn-night/auth.html?authclient=facebook" target="_blank" class="btn btn_fb_login"></a>
+            <a href="https://sengoku-taisen-m.tw/pre/auth.html?authclient=facebook" target="_blank" class="btn btn_fb_login"></a>
         `;
 
-        dialog.showInfo(`<div class="pop pop-global-bg">
+        dialog.showInfo(`<div class="pop pop-global-logic">
             <div class="borbox pop_login">
-                <p>로그인 후 이벤트 참여 가능</p>
                 ${LoginHtml}
             </div>
         </div>`)
@@ -227,26 +229,26 @@ dialog = {
     },
     // 我的背包
     alertPop_mylott: function (data) {
-        let _html = `<div class="plan-cen"> 
-            <dl class='dl_lists'>
-                <dd> <b class="cms-lott-icon"></b> <span class="code" id='dum1'>XDF3FXCV</span> </dd>
-                <i class='copyele'>COPY</i>
-            </dl>
-        </div>`;
-
-        // let _htmlInner = '';
-        // for (let i = 0; i < data.length; i++) {
-        //     const element = data[i];
-
-        //     _htmlInner += ` 
+        // let _html = `<div class="plan-cen"> 
         //     <dl class='dl_lists'>
-        //         <dd> <b class="cms-lott-icon">${data[i].current_serial}</b> <span class="code" id='dum${i + 1}'>${data[i].gift_code}</span> </dd>
+        //         <dd> <b class="cms-lott-icon"></b> <span class="code" id='dum1'>XDF3FXCV</span> </dd>
         //         <i class='copyele'>COPY</i>
         //     </dl>
-        // `;
-        // }
+        // </div>`;
 
-        // let _html = `<div class="plan-cen">${_htmlInner}</div>`;
+        let _htmlInner = '';
+        for (let i = 0; i < data.length; i++) {
+            const element = data[i];
+
+            _htmlInner += ` 
+            <dl class='dl_lists'>
+                <dd> <b class="cms-lott-icon"><img class="imgcove" src="../images/page2/${data[i].gift_id}.png" /></b> <span class="code" id='dum${i + 1}'>${data[i].gift_code}</span> </dd>
+                <i class='copyele'>COPY</i>
+            </dl>
+        `;
+        }
+
+        let _html = `<div class="plan-cen">${_htmlInner}</div>`;
 
 
         dialog.showInfo(`<div class="pop pop-global-logic">
@@ -263,7 +265,7 @@ dialog = {
         let _html = `
                 <dl class="hero-pic1">
                     <dt> <img class="imgcove" src="images/page4/pop-hero1.png" /> </dt>
-                    <dd> <img class="imgcove" src="images/page4/hero-msg1.png" />  <span class="btn btn-cv-play " data-url=""></span> </dd>
+                    <dd> <img class="imgcove" src="images/page4/hero-msg1.png" />  <span class="btn btn-cv-play " data-url="../audio/a1.wav"></span> </dd>
                 </dl>
             `;
 
@@ -283,7 +285,7 @@ dialog = {
         let _html = `
                 <dl class="hero-pic2">
                     <dt> <img class="imgcove" src="images/page4/pop-hero2.png" /> </dt>
-                    <dd> <img class="imgcove" src="images/page4/hero-msg2.png" />  <span class="btn btn-cv-play " data-url=""></span> </dd>
+                    <dd> <img class="imgcove" src="images/page4/hero-msg2.png" />  <span class="btn btn-cv-play " data-url="../audio/a2.wav"></span> </dd>
                 </dl>
             `;
 
@@ -303,7 +305,7 @@ dialog = {
         let _html = `
                 <dl class="hero-pic3">
                     <dt> <img class="imgcove" src="images/page4/pop-hero3.png" /> </dt>
-                    <dd> <img class="imgcove" src="images/page4/hero-msg3.png" />  <span class="btn btn-cv-play " data-url=""></span> </dd>
+                    <dd> <img class="imgcove" src="images/page4/hero-msg3.png" />  <span class="btn btn-cv-play " data-url="../audio/a3.wav"></span> </dd>
                 </dl>
             `;
 
@@ -340,3 +342,5 @@ function timestampToTime(timestamp) {
 
 // 背包
 // dialog.alertPop_mylott();
+
+// dialog.alertPopLogin();

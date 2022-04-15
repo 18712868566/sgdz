@@ -624,12 +624,17 @@ body {
     z-index: 4;
 }
 
+.lantern-center.curr {
+    -webkit-animation: catchDissipate 300ms linear both alternate;
+    animation: catchDissipate 300ms linear both alternate;
+}
+
 .fixed-lantern-top .lantern-line {
     width: .12rem;
     height: 1.44rem;
     background: url(../images/page2/lantern-line.png) no-repeat 0 0 / 100% 100%;
     position: absolute;
-    top: 0;
+    top: .1rem;
     left: 50%;
     margin-left: -0.06rem;
 }
@@ -639,10 +644,16 @@ body {
     height: .3rem;
     background: url(../images/page2/lantern-btn.png) no-repeat 0 0 / 100% 100%;
     position: absolute;
-    top: 1.1rem;
+    top: 1.2rem;
     left: 50%;
     margin-left: -.19rem;
-    z-index: 4;
+    z-index: 9;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.fixed-lantern-top .btn-move-off {
+    transform: rotate(-180deg)
 }
 
 .lantern-center {
@@ -650,7 +661,10 @@ body {
     height: 4.52rem;
     background: url(../images/page2/lantern-center.png) no-repeat 0 0 / 100% 100%;
     position: absolute;
-    top: 1.4rem;
+    top: 1.5rem;
+    /* transition: all 300ms; */
+    -webkit-animation: catchWind 3s linear both alternate infinite;
+    animation: catchWind 3s linear both alternate infinite;
 }
 
 .lantern-center .btn {
@@ -658,6 +672,12 @@ body {
     width: 1.68rem;
     height: .44rem;
     margin: 0 auto .1rem;
+    transition: all 300ms;
+}
+
+.lantern-center:hover, .lantern-center .btn:hover {
+    -webkit-filter: brightness(120%);
+    filter: brightness(120%);
 }
 
 .lantern-center .btn-gp {
@@ -702,6 +722,7 @@ body {
     margin: 0 .1rem .4rem;
     text-align: center;
     cursor: pointer;
+    position: relative;
 }
 
 .question-box img {
@@ -729,6 +750,133 @@ body {
     height: 0.96rem;
 }
 
+.unlock {
+    width: .54rem;
+    height: .64rem;
+    background: url(../images/page2/icon-unlock.png) no-repeat 0 0 / 100% 100%;
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -0.27rem;
+    bottom: .6rem;
+}
+
+.finish {
+    width: 1.3rem;
+    height: .94rem;
+    background: url(../images/page2/icon-finish.png) no-repeat 0 0 / 100% 100%;
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -0.5rem;
+    bottom: .3rem;
+    visibility: hidden;
+}
+
+.answer-pop {
+    width: 12.06rem;
+    height: 8.58rem;
+    background: url(../images/page2/answer-pop.png) no-repeat 0 0 / 100% 100%;
+    position: absolute;
+    top: 1.45rem;
+    left: 50%;
+    margin-left: -6.8rem;
+}
+
+.answer-pop .wenda {
+    padding: 1rem;
+}
+
+.answer-pop .wenda h1 {
+    color: #281804;
+    font-size: .4rem;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: .3rem;
+    position: relative;
+}
+
+.answer-pop .wenda h1::after {
+    content: '';
+    display: block;
+    width: 7rem;
+    height: .01rem;
+    background: #9b5c0d;
+    position: absolute;
+    bottom: -0.15rem;
+}
+
+.answer-pop .wenda dl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: .5rem;
+}
+
+.answer-pop .wenda dl dt {
+    width: 100%;
+    color: #281804;
+    font-size: .3rem;
+    text-align: center;
+}
+
+.answer-pop .wenda dl dd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: .3rem;
+}
+
+.answer-pop .wenda dl dd p {
+    margin: 0 .4rem;
+    color: #281804;
+    font-size: .26rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.answer-pop .wenda dl dd p.curr::after {
+    content: '';
+    display: block;
+    width: 1.08rem;
+    height: .58rem;
+    background: url(../images/page2/icon-quanquan.png) no-repeat 0 0 / 100% 100%;
+    position: absolute;
+    top: -0.1rem;
+    right: 0;
+}
+
+.answer-btns {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: .3rem;
+}
+
+.answer-btns .btn {
+    width: 2.24rem;
+    height: .68rem;
+    margin: 0 .4rem;
+    background: url(../images/page2/answer-btns.png) no-repeat 0 0 / 5.26rem 1.36rem;
+}
+
+.answer-btns .btn-submit {
+    background-position: 0 0;
+}
+
+.answer-btns .btn-gofb {
+    background-position: 100% 0;
+}
+
+.answer-btns .btn-submit:hover {
+    background-position: 0 -0.68rem;
+}
+
+.answer-btns .btn-gofb:hover {
+    background-position: 100% -0.68rem;
+}
 
 /* page3 */
 .page3 {
@@ -931,6 +1079,7 @@ body {
     top: 0;
     right: 0;
     background: url(../images/page3/icon_over.png) no-repeat 0 0 / 100% 100%;
+    display: none;
 }
 
 .page3 .pre-progress .pw-w5 .icon_over {
@@ -1495,6 +1644,7 @@ body {
 .pop-plan-mylott .plan-cen {
     padding: .6rem .4rem .6rem .4rem;
     height: 8.6rem;
+    overflow: hidden;
 }
 
 .pop-plan-mylott .plan-cen .dl_lists {
@@ -1502,17 +1652,26 @@ body {
     justify-content: center;
     align-items: center;
     width: 94%;
-    margin: 0 auto;
+    margin: .2rem auto .3rem;
     position: relative;
+}
+
+.pop-plan-mylott .plan-cen .dl_lists .cms-lott-icon {
+    width: 1rem;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -0.1rem;
 }
 
 .pop-plan-mylott .plan-cen .dl_lists .code {
     display: block;
-    width: 4rem;
+    width: 3.44rem;
     height: .6rem;
     line-height: .6rem;
-    background: red;
+    background: url(../images/pop/input.png) no-repeat 0 0 / 100% 100%;
     text-indent: .3rem;
+    color: #fff;
 }
 
 .pop-plan-mylott .plan-cen .dl_lists .copyele {
@@ -1523,4 +1682,52 @@ body {
     right: 0;
     top: 0;
     text-indent: -999em;
+    cursor: pointer;
+}
+
+.popytbVideo {
+    height: 8rem;
+}
+
+.popytbVideo .before {
+    width: 14rem;
+    height: 8rem;
+    margin: 0 auto;
+}
+
+.popytbVideo iframe {
+    width: 14rem;
+    height: 8rem;
+    margin: 0 auto;
+}
+
+.popytbVideo .pop_hero_close {
+    width: .56rem;
+    height: .56rem;
+    background: url(../images/pop/pop_close.png) no-repeat 0 0 / 100% 100%;
+    top: 0;
+    right: 5rem;
+}
+
+#mp3Btn {
+    visibility: hidden;
+}
+
+/* 登录 */
+.pop_login {
+    width: 7.22rem;
+    height: 3.88rem;
+    background: url(../images/pop/pop-login.png) no-repeat 0 0 / 100% 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_fb_login {
+    width: 2.31rem;
+    height: .61rem;
+    background: url(../images/pop/btn_login.png) no-repeat 0 0 / 100% 100%;
+    margin: 0 auto;
 }
