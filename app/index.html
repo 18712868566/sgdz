@@ -24,7 +24,7 @@
         content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover,minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- 网页icon -->
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/favicon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="bower_components/aos/dist/aos.css">
     <link rel="stylesheet" href="bower_components/swiper/dist/css/swiper-bundle.min.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css">
@@ -44,12 +44,38 @@
             <p class="btn btn-game-feature">游戏特色</p>
 
             <span class="after"></span>
+
+        </div>
+
+        <b class="btn-bgm"></b>
+    </div>
+
+    <!-- 悬浮 社媒 download -->
+    <div class="fixed-lantern-top">
+        <!-- 可收起按钮 -->
+        <div class="lantern-btn "></div>
+        <!-- 线 -->
+        <div class="lantern-line"></div>
+        <!-- 灯笼 -->
+        <div class="lantern-center">
+            <a class="btn btn-gp"
+                href="https://play.google.com/store/apps/details?id=com.herogame.gplay.sengokutaisen.mobilerpg.sega.tw"
+                target="_blank"></a>
+            <a class="btn btn-apple"
+                href="https://apps.apple.com/tw/app/%E6%88%B0%E5%9C%8B%E5%A4%A7%E6%88%B0m/id1611276791"
+                target="_blank"></a>
+            <a class="btn btn-bb" href="javascript:;"></a>
+            <a class="btn btn-fb" href="https://www.facebook.com/sengokutaisen.tw.sega" target="_blank"></a>
         </div>
     </div>
+
+    <audio id="bgm" autoplay loop>
+        <source src="" type="audio/mpeg" />
+    </audio>
     <!-- Swiper -->
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div class="swiper-slide swiper-no-swiping">
                 <div class="page1">
                     <!-- 背景圆球 -->
                     <div class="circ-box circ-box-ani"></div>
@@ -70,27 +96,8 @@
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide swiper-no-swiping">
                 <div class="page2">
-                    <!-- 悬浮 社媒 download -->
-                    <div class="fixed-lantern-top">
-                        <!-- 可收起按钮 -->
-                        <div class="lantern-btn "></div>
-                        <!-- 线 -->
-                        <div class="lantern-line"></div>
-                        <!-- 灯笼 -->
-                        <div class="lantern-center">
-                            <a class="btn btn-gp"
-                                herf="https://play.google.com/store/apps/details?id=com.herogame.gplay.sengokutaisen.mobilerpg.sega.tw"
-                                target="_blank"></a>
-                            <a class="btn btn-apple"
-                                herf="https://apps.apple.com/tw/app/%E6%88%B0%E5%9C%8B%E5%A4%A7%E6%88%B0m/id1611276791"
-                                target="_blank"></a>
-                            <a class="btn btn-bb" herf="javascript:;" target="_blank"></a>
-                            <a class="btn btn-fb" herf="https://www.facebook.com/sengokutaisen.tw.sega"
-                                target="_blank"></a>
-                        </div>
-                    </div>
                     <!-- 门 -->
                     <div class="jiazi-bg">
                         <!-- 左灯笼 -->
@@ -141,11 +148,11 @@
                                     <span class="unlock"></span>
                                     <span class="finish "></span>
                                 </p>
-                                <p class="question-box question_10"><img src="images/page2/1051.png" alt="">
+                                <p class="question-box question_10"><img src="images/page2/1052.png" alt="">
                                     <span class="unlock"></span>
                                     <span class="finish "></span>
                                 </p>
-                                <p class="question-box question_11"><img src="images/page2/1052.png" alt="">
+                                <p class="question-box question_11"><img src="images/page2/1051.png" alt="">
                                     <span class="unlock"></span>
                                     <span class="finish "></span>
                                 </p>
@@ -168,7 +175,7 @@
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide swiper-no-swiping">
                 <div class="page3">
                     <h2 class="title"><img class="imgcove" src="images/page3/title.png" alt=""></h2>
                     <div class="center-bg">
@@ -286,10 +293,10 @@
                             <!-- downs -->
                             <div class="pre-btns">
                                 <a class="btn btn-gp"
-                                    herf="https://play.google.com/store/apps/details?id=com.herogame.gplay.sengokutaisen.mobilerpg.sega.tw"
+                                    href="https://play.google.com/store/apps/details?id=com.herogame.gplay.sengokutaisen.mobilerpg.sega.tw"
                                     target="_blank"></a>
                                 <a class="btn btn-apple"
-                                    herf="https://apps.apple.com/tw/app/%E6%88%B0%E5%9C%8B%E5%A4%A7%E6%88%B0m/id1611276791"
+                                    href="https://apps.apple.com/tw/app/%E6%88%B0%E5%9C%8B%E5%A4%A7%E6%88%B0m/id1611276791"
                                     target="_blank"></a>
                             </div>
 
@@ -322,7 +329,7 @@
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide swiper-no-swiping">
                 <audio id="mp3Btn">
                     <source src="" type="audio/mpeg" />
                 </audio>
@@ -341,7 +348,7 @@
                     <p class="huo2"></p>
                 </div>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide swiper-no-swiping">
                 <div class="page5">
                     <h2 class="title"><img class="imgcove" src="images/page5/title.png" alt=""></h2>
                     <div class="show-pic-box">
@@ -349,29 +356,50 @@
                         <div class="banner-container">
                             <ul class="ul-width">
                                 <li class="curr">
-                                    <span class="overlay">大名集結 天下爭霸</span>
+                                    <span class="overlay font-skt">大名集結 天下爭霸</span>
                                     <a href="javascript:;"></a>
                                 </li>
                                 <li>
-                                    <span class="overlay">排兵佈陣 智取強敵</span>
+                                    <span class="overlay font-skt">排兵佈陣 智取強敵</span>
                                     <a href="javascript:;"></a>
                                 </li>
                                 <li>
-                                    <span class="overlay">調兵遣將 謀略交鋒</span>
+                                    <span class="overlay font-skt">調兵遣將 謀略交鋒</span>
                                     <a href="javascript:;"></a>
                                 </li>
                                 <li>
-                                    <span class="overlay">攻城略地 一統天下</span>
+                                    <span class="overlay font-skt">攻城略地 一統天下</span>
                                     <a href="javascript:;"></a>
                                 </li>
                                 <li>
-                                    <span class="overlay">豪華聲優 傾情演繹</span>
+                                    <span class="overlay font-skt">豪華聲優 傾情演繹</span>
                                     <a href="javascript:;"></a>
                                 </li>
 
                             </ul>
                             <div class="clear"></div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide swiper-no-swiping page6">
+                <div id="footer">
+                    <div class="footer">
+                        <div class="footer-link">
+                            <a href="javascript:dialog.alertPop_gz();">活動規則
+                                <span>&gt;</span><span>&gt;</span><span>&gt;</span></a>
+                            <a href="javascript:dialog.alertXy();">迪諾遊戲有限公司個人資料暨隱私權保護政策
+                                <span>&gt;</span><span>&gt;</span><span>&gt;</span></a>
+                        </div>
+                        <div class="footer-company">
+                            <img class="imgcove"
+                                src="//cdnstatic.herogame.com/static/soultidetw_herogame_com/pre/pc/images/company-logo.png"
+                                alt="">
+                        </div>
+                        <p class="footer-ratings">遊戲涉及「暴力」有打鬥、攻擊等未達血腥之畫面或有輕微恐怖之畫面</p>
+                        <p class="footer-ratings">注意使用時間，避免沉迷於遊戲
+                            若有以購買遊戲點數（卡）、虛擬遊戲幣或虛擬寶物作為付費方式者，應標示其付費內容及金額、遊戲部分內容或服務需另行支付其他費用，或其他類似警語</p>
+                        <p class="footer-ratings">「本遊戲在台灣是由迪諾遊戲負責營運」</p>
                     </div>
                 </div>
             </div>

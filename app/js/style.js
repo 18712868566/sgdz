@@ -60,6 +60,27 @@ $(function () {
         dialog.alertHeroChangZheng();
     });
 
+    // bgm 自动播放
+
+    var bgmAudio = $('#bgm')[0];
+
+    setTimeout(() => {
+        bgmAudio.src = '../audio/bgm.wav';
+        bgmAudio.pause();
+        // bgmAudio.play();
+    }, 1000);
+
+    $(document).on('click', '.btn-bgm', function () {
+        $(this).toggleClass('bgm-close');
+
+        if (bgmAudio.paused) {
+            bgmAudio.play();
+        } else {
+            bgmAudio.pause();
+        }
+    })
+
+
 
     // 点击播放音频
     var indexAudio = $('#mp3Btn')[0];
@@ -104,7 +125,32 @@ $(function () {
         slidesPerView: 1,
         spaceBetween: 0,
         mousewheel: true,
+        slidesPerView: "auto",
+        watchSlidesProgress: true,
+        watchSlidesVisibility: true,
         on: {
+            init: function (swiper) {
+                slide = this.slides.eq(0);
+                slide.addClass('ani-slide');
+            },
+            transitionStart: function () {
+                for (i = 0; i < this.slides.length; i++) {
+                    slide = this.slides.eq(i);
+                    slide.removeClass('ani-slide');
+                }
+            },
+            transitionEnd: function () {
+                console.log('this.activeIndex===' + this.activeIndex);
+                slide = this.slides.eq(this.activeIndex);
+
+                if (!slide.hasClass('ani-slide')) {
+                    slide.addClass('ani-slide');
+                } else {
+                    console.log('已有');
+                }
+
+
+            },
             slideChangeTransitionStart: function () {
                 console.log(this.activeIndex);
                 // argumentsTabs('.swp-nav .btn', page, this.activeIndex);

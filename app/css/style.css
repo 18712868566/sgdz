@@ -12,8 +12,8 @@
 
 
 @font-face {
-    font-family: 'STKaiTiTcBold.';
-    src: url('../font/STKaiTiTcBold.eot?#font-spider') format('embedded-opentype'), url('../font/STKaiTiTcBold.ttf') format('truetype');
+    font-family: 'STKaiTiTcBold';
+    src: url('../font/gtb.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -256,7 +256,6 @@ html,
 body {
     position: relative;
     height: 100%;
-    background: red;
 }
 
 .swiper {
@@ -288,6 +287,7 @@ body {
     left: 50%;
     margin-left: -6.55rem;
     margin-top: -6.54rem;
+    opacity: 0;
 }
 
 .hero-left-pic1 {
@@ -298,6 +298,7 @@ body {
     z-index: 1;
     bottom: -1rem;
     left: 0;
+    opacity: 0;
 }
 
 .hero-left-pic2 {
@@ -308,6 +309,7 @@ body {
     z-index: 2;
     left: 0;
     bottom: -1rem;
+    opacity: 0;
 }
 
 .hero-middle-pic {
@@ -319,6 +321,7 @@ body {
     left: 50%;
     margin-left: -7.99rem;
     bottom: 0;
+    opacity: 0;
 }
 
 .hero-right-pic1 {
@@ -329,6 +332,7 @@ body {
     z-index: 1;
     right: 0;
     bottom: -1rem;
+    opacity: 0;
 }
 
 .hero-right-pic2 {
@@ -339,6 +343,7 @@ body {
     z-index: 2;
     right: 0;
     bottom: -1rem;
+    opacity: 0;
 }
 
 .page1-footer {
@@ -360,6 +365,7 @@ body {
     bottom: .3rem;
     right: .5rem;
     overflow: hidden;
+    opacity: 0;
 }
 
 .slo {
@@ -371,6 +377,7 @@ body {
     margin-left: -5.7rem;
     bottom: 0.85rem;
     z-index: 9;
+    opacity: 0;
 }
 
 .btn-video-play {
@@ -383,50 +390,55 @@ body {
     top: 50%;
     margin-top: 0.2rem;
     margin-left: -0.8rem;
+    opacity: 0;
 }
 
-.left-pic1-ani {
+.ani-slide .left-pic1-ani {
     -webkit-animation: slideToRight 200ms 200ms linear both;
     animation: slideToRight 200ms 200ms linear both;
 }
 
-.left-pic2-ani {
+.ani-slide .left-pic2-ani {
     -webkit-animation: slideToRight 200ms 300ms linear both;
     animation: slideToRight 200ms 300ms linear both;
 }
 
-.middle-ani {
+.ani-slide .middle-ani {
     -webkit-animation: catchScaleIn 200ms 600ms linear both;
     animation: catchScaleIn 200ms 600ms linear both;
 }
 
 
-.right-pic1-ani {
+.ani-slide .right-pic1-ani {
     -webkit-animation: slideToLeft 200ms 200ms linear both;
     animation: slideToLeft 200ms 200ms linear both;
 }
 
-.right-pic2-ani {
+.ani-slide .right-pic2-ani {
     -webkit-animation: slideToLeft 200ms 300ms linear both;
     animation: slideToLeft 200ms 300ms linear both;
 }
 
 
-.slo-ani {
+.ani-slide .slo-ani {
     -webkit-animation: catchScaleIn 400ms 600ms cubic-bezier(.98, .01, 1, 1) both;
     animation: catchScaleIn 400ms 600ms cubic-bezier(.98, .01, 1, 1) both;
 }
 
-.circ-box-ani {
+.ani-slide .circ-box-ani {
     -webkit-animation: catchScaleOut 400ms 150ms linear both;
     animation: catchScaleOut 400ms 150ms linear both;
 }
 
-.video-play-ani, .page1-footer-ani {
+.ani-slide .video-play-ani, .page1-footer-ani {
     -webkit-animation: animeAlpha 200ms 650ms linear both;
     animation: animeAlpha 200ms 650ms linear both;
 }
 
+.ani-slide .page1-footer .copyright {
+    -webkit-animation: animeAlpha 200ms 750ms linear both;
+    animation: animeAlpha 200ms 750ms linear both;
+}
 
 /* 导航 */
 .topBar {
@@ -556,7 +568,14 @@ body {
     left: 50%;
     margin-left: -9.1rem;
     bottom: 0.55rem;
+    opacity: 0;
 }
+
+.ani-slide .jiazi-bg, .ani-slide .jiazi-girl {
+    -webkit-animation: slideToTop 200ms 250ms linear both;
+    animation: slideToTop 200ms 250ms linear both;
+}
+
 
 .jiazi-girl {
     width: 8.34rem;
@@ -566,6 +585,7 @@ body {
     right: 0;
     bottom: 0rem;
     z-index: 3;
+    opacity: 0;
 }
 
 .fixed-lott {
@@ -575,7 +595,14 @@ body {
     position: absolute;
     left: 1rem;
     bottom: 1rem;
+    opacity: 0;
 }
+
+.ani-slide .fixed-lott {
+    -webkit-animation: catchScaleIn 200ms 300ms linear both;
+    animation: catchScaleIn 200ms 300ms linear both;
+}
+
 
 .fixed-lott .tips {
     width: 5.12rem;
@@ -618,7 +645,7 @@ body {
 /* 右灯笼 */
 .fixed-lantern-top {
     width: 2.42rem;
-    position: absolute;
+    position: fixed;
     top: 0rem;
     right: 0.1rem;
     z-index: 4;
@@ -783,6 +810,17 @@ body {
     margin-left: -6.8rem;
 }
 
+.answer-pop .answer-pop-close {
+    width: .56rem;
+    height: .56rem;
+    background: url(../images/pop/pop_close.png) no-repeat 0 0 / 100% 100%;
+    position: absolute;
+    top: 0;
+    right: 1.2rem;
+    cursor: pointer;
+    z-index: 9;
+}
+
 .answer-pop .wenda {
     padding: 1rem;
 }
@@ -888,6 +926,7 @@ body {
 }
 
 
+
 .page3 .center-bg {
     width: 20.76rem;
     height: 10.8rem;
@@ -896,6 +935,7 @@ body {
     bottom: 0;
     left: 50%;
     margin-left: -10.38rem;
+    opacity: 0;
 }
 
 
@@ -907,6 +947,12 @@ body {
     left: 50%;
     margin-left: -1.81rem;
     bottom: 10rem;
+    opacity: 0;
+}
+
+.ani-slide .page3 .center-bg, .ani-slide .page3 .title {
+    -webkit-animation: slideToTop 200ms 250ms linear both;
+    animation: slideToTop 200ms 250ms linear both;
 }
 
 .page3 .pre-reserve {
@@ -941,28 +987,29 @@ body {
     display: inline-block;
     font-size: 0;
     border: none;
-    margin-top: 0.32rem;
+    margin-top: 0.3rem;
     position: relative;
 }
 
+
 .panel .digit:nth-child(2) {
-    left: -0.25rem
+    left: -0.1rem
 }
 
 .panel .digit:nth-child(3) {
-    left: -0.35rem;
+    left: -0.3rem;
 }
 
 .panel .digit:nth-child(4) {
-    left: -0.45rem;
+    left: -0.4rem;
 }
 
 .panel .digit:nth-child(5) {
-    left: -0.55rem;
+    left: -0.5rem;
 }
 
 .panel .digit:nth-child(6) {
-    left: -0.65rem;
+    left: -0.6rem;
 }
 
 .panel .digit ul {
@@ -1071,6 +1118,27 @@ body {
     position: relative;
 }
 
+.ani-slide .pre-progress .pw-w5 {
+    -webkit-animation: catchScaleIn 200ms 300ms linear both;
+    animation: catchScaleIn 200ms 300ms linear both;
+}
+
+.ani-slide .pre-progress .pw-w10 {
+    -webkit-animation: catchScaleIn 200ms 350ms linear both;
+    animation: catchScaleIn 200ms 350ms linear both;
+}
+
+.ani-slide .pre-progress .pw-w20 {
+    -webkit-animation: catchScaleIn 200ms 400ms linear both;
+    animation: catchScaleIn 200ms 400ms linear both;
+}
+
+.ani-slide .pre-progress .pw-w30 {
+    -webkit-animation: catchScaleIn 200ms 450ms linear both;
+    animation: catchScaleIn 200ms 450ms linear both;
+}
+
+
 .page3 .pre-progress .icon_over {
     display: block;
     width: .81rem;
@@ -1137,6 +1205,7 @@ body {
     margin-left: 3.5rem;
 }
 
+/* page4 */
 .page4 {
     width: 100%;
     height: 100%;
@@ -1153,6 +1222,7 @@ body {
     left: 0;
     bottom: 0;
     z-index: 3;
+    opacity: 0;
 }
 
 .hero-xinchang {
@@ -1163,6 +1233,7 @@ body {
     bottom: 0;
     left: 50%;
     margin-left: -8.67rem;
+    opacity: 0;
     z-index: 4;
 }
 
@@ -1173,6 +1244,7 @@ body {
     position: absolute;
     bottom: 0;
     right: 0;
+    opacity: 0;
     z-index: 3;
 }
 
@@ -1221,23 +1293,57 @@ body {
 .hero-flex .hero-name:nth-child(1) {
     width: 5.4rem;
     background: url(../images/page4/name1.png) no-repeat center bottom / 100% auto;
+    opacity: 0;
+
 }
 
 .hero-flex .hero-name:nth-child(2) {
     width: 9.26rem;
     background: url(../images/page4/name2.png) no-repeat center bottom / 100% auto;
+    opacity: 0;
 }
 
 .hero-flex .hero-name:nth-child(3) {
     width: 5.9rem;
     background: url(../images/page4/name3.png) no-repeat center bottom / 100% auto;
+    opacity: 0;
 }
 
 .hoverAni {
-    -webkit-animation: animeBrightness 300ms linear both;
-    animation: animeBrightness 300ms linear both;
+    -webkit-animation: animeBrightness 200ms linear both;
+    animation: animeBrightness 200ms linear both;
 }
 
+.ani-slide .hero-flex .hero-name:nth-child(1) {
+    -webkit-animation: catchScaleIn 200ms 900ms linear both;
+    animation: catchScaleIn 200ms 900ms linear both;
+}
+
+.ani-slide .hero-flex .hero-name:nth-child(2) {
+    -webkit-animation: catchScaleIn 200ms 1200ms linear both;
+    animation: catchScaleIn 200ms 1200ms linear both;
+}
+
+.ani-slide .hero-flex .hero-name:nth-child(3) {
+    -webkit-animation: catchScaleIn 200ms 900ms linear both;
+    animation: catchScaleIn 200ms 900ms linear both;
+}
+
+.ani-slide .hero-xinxuan {
+    -webkit-animation: slideToRight 200ms 200ms linear both;
+    animation: slideToRight 200ms 200ms linear both;
+}
+
+.ani-slide .hero-xinchang {
+    -webkit-animation: catchScaleIn 200ms 500ms linear both;
+    animation: catchScaleIn 200ms 500ms linear both;
+}
+
+
+.ani-slide .hero-changzheng {
+    -webkit-animation: slideToLeft 200ms 200ms linear both;
+    animation: slideToLeft 200ms 200ms linear both;
+}
 
 
 /* page5 */
@@ -1258,6 +1364,7 @@ body {
     left: 50%;
     margin-top: -4.96rem;
     margin-left: -10.05rem;
+    opacity: 0;
 }
 
 .page5 .title {
@@ -1267,6 +1374,13 @@ body {
     left: 50%;
     margin-left: -1.81rem;
     bottom: 10rem;
+    opacity: 0;
+}
+
+
+.ani-slide .page5 .show-pic-box, .ani-slide .page5 .title {
+    -webkit-animation: slideToTop 200ms 150ms linear both;
+    animation: slideToTop 200ms 150ms linear both;
 }
 
 
@@ -1354,7 +1468,7 @@ body {
     background: url(../images/page5/item.png) no-repeat 0 0 / 100% 100%;
     position: relative;
     color: #ffe9a7;
-    text-shadow: 2px 0 0 #000, 0 2px 0 #000, -2px 0 0 #000, 0 -2px 0 #000;
+    text-shadow: .02rem 0 0 #000, 0 .02rem 0 #000, -0.02rem 0 0 #000, 0 -0.02rem 0 #000;
 }
 
 .banner-container li.curr span.overlay::after, .banner-container li:hover span.overlay::after {
@@ -1383,7 +1497,7 @@ body {
 
 .banner-container li:hover span.overlay {
     color: #ffe9a7;
-    text-shadow: 2px 0 0 #000, 0 2px 0 #000, -2px 0 0 #000, 0 -2px 0 #000;
+    /* text-shadow: 2px 0 0 #000, 0 2px 0 #000, -2px 0 0 #000, 0 -2px 0 #000; */
 }
 
 
@@ -1722,7 +1836,13 @@ body {
     overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+}
+
+.pop_login p {
+    width: 80%;
+    font-size: .24rem;
+    margin-top: 1rem;
 }
 
 .btn_fb_login {
@@ -1730,4 +1850,131 @@ body {
     height: .61rem;
     background: url(../images/pop/btn_login.png) no-repeat 0 0 / 100% 100%;
     margin: 0 auto;
+}
+
+
+/* footer */
+.mySwiper .page6 {
+    background: #000;
+    height: auto !important;
+    position: relative;
+    overflow: hidden;
+}
+
+#footer {
+    background: #000;
+}
+
+.footer {
+    padding: 0.5rem 0 1rem 0;
+}
+
+.footer-link {
+    text-align: center;
+    color: #ccc;
+    font-size: 0.18rem;
+}
+
+.footer-link:after {
+    content: '';
+    width: .5rem;
+    height: .5rem;
+    background: url(../images/12+.png) no-repeat 0 0 / 100% 100%;
+    display: block;
+    position: absolute;
+    top: 2.2rem;
+    left: 4.8rem;
+}
+
+.footer-link a {
+    padding: 0 0.3rem;
+    border-right: 1px solid #fff;
+}
+
+.footer-link a:first-child {
+    border-left: 1px solid #fff;
+}
+
+.footer-link a:hover {
+    color: #f05;
+}
+
+.footer-link a span:first-child {
+    animation: nextAni 0.3s ease-in-out infinite;
+}
+
+.footer-link a span:nth-child(2) {
+    animation: nextAni 0.4s ease-in-out infinite;
+}
+
+.footer-link a span:last-child {
+    animation: nextAni 0.5s ease-in-out infinite;
+}
+
+@keyframes nextAni {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.footer-company {
+    width: 2.1rem;
+    height: 0.87rem;
+    margin: 0.2rem auto 0;
+}
+
+.footer-company img {
+    width: 100%;
+}
+
+.footer-ratings {
+    margin: 0.2rem auto 0;
+    width: 14rem;
+    color: #ccc;
+    line-height: 1.5;
+    font-size: 0.18rem;
+    text-align: left;
+    position: relative;
+}
+
+.footer-ratings::before {
+    content: "";
+    display: inline-block;
+    width: 0.12rem;
+    height: 0.12rem;
+    background-color: #ccc;
+    line-height: 1.5;
+    margin-right: 0.1rem;
+}
+
+/* 背景音乐 */
+#bgm {
+    visibility: hidden;
+}
+
+.topBar .btn-bgm {
+    display: block;
+    width: .7rem;
+    height: .61rem;
+    background: url(../images/bgm-open.png) no-repeat 0 0 / 100% 100%;
+    position: absolute;
+    top: 50%;
+    margin-top: -.4rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.topBar .btn-bgm.bgm-close {
+    background: url(../images/bgm-close.png) no-repeat 0 0 / 100% 100%;
+}
+
+/* 窗口化 页面展示 */
+@media only screen and (max-width:1920px) {
+    .page1, .page2, .page3, .page4, .page5 {
+        background-size: 100% 100%;
+    }
 }
